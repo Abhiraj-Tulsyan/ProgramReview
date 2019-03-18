@@ -1,0 +1,30 @@
+import java.util.*;
+class program {
+    public static void main(String[] args) {
+        Scanner ab = new Scanner(System.in);
+        System.out.println("a: ");
+        int a = ab.nextInt();
+        System.out.println("b: ");
+        int b = ab.nextInt();
+        System.out.println("c: ");
+        int c = ab.nextInt();
+        System.out.println("d: ");
+        int d = ab.nextInt();
+        System.out.println(recursion(a,b,c,d));
+    }
+
+  static  boolean recursion(int a, int b, int c, int d) {
+       if(a==c&&b==d)
+       {
+           return true;
+       }
+        if (a > c || b > d){
+            return false;
+        }
+        boolean first=recursion(a,a+b,c ,d);
+       boolean second=recursion(a+b,b, c,d);
+
+       return (first||second);
+    }
+
+}
